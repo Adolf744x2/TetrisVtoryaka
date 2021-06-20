@@ -18,6 +18,7 @@ namespace tetris
 {
     public class Board
     {
+        /* создаём переменные*/
         private int Rows;
         private int Cols;
         private int Score;
@@ -296,8 +297,9 @@ namespace tetris
         }
         private Point[] setRandomShape()
         {
-            Random rand = new Random();
-            switch (rand.Next() % 7)
+           /* Экземпляр рандом*/ Random rand = new Random();
+
+            /* Оператор*/   switch (rand.Next() % 7)
             {
                 case 0: // I
                     rotate = true;
@@ -392,7 +394,7 @@ namespace tetris
         {
             Timer = new DispatcherTimer();
             Timer.Tick += new EventHandler(GameTick);
-            Timer.Interval = new TimeSpan(0, 0, 0, 0, 400);
+            Timer.Interval = new TimeSpan(0, 0, 0, 0, 600);
             GameStart();
         }
         private void GameStart()
